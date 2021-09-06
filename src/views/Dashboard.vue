@@ -1,7 +1,7 @@
 <template>
   <section id="calculator">
     <div class="col1">
-      <h3>Calculator</h3>
+      <h2>Calculator</h2>
         <b-container>
           <b-row>
             <b-col>
@@ -22,7 +22,7 @@
           <b-row><b-col>&nbsp;</b-col></b-row>
           <b-row>
             <b-col>
-              <p>{{ num1 }} - {{ num2 }} = {{answer}}</p>
+              <h4>{{ num1 }} - {{ num2 }} = {{answer}}</h4>
               <form @submit.prevent>
                 <b-button variant="primary" @click="refresh()">Refresh</b-button> &nbsp;
                 <b-button variant="primary" @click="getAnswer()">Answer</b-button> &nbsp;
@@ -62,6 +62,7 @@ export default {
         this.num1 = this.num2;
         this.num2 = temp;
       }
+
       this.answer = "";
     },
     getAnswer() {
