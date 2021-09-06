@@ -2,13 +2,34 @@
   <section id="calculator">
     <div class="col1">
       <h3>Calculator</h3>
-
-      <p>{{ num1 }} - {{ num2 }} = {{answer}}</p>
-
-      <form @submit.prevent>
-        <b-button variant="primary" @click="refresh()">Refresh</b-button> &nbsp;
-        <b-button variant="primary" @click="getAnswer()">Answer</b-button> &nbsp;
-      </form>
+        <b-container>
+          <b-row>
+            <b-col>
+              <b-form-group
+                      id="sbutton-digits-label"
+                      label="Digits"
+                      label-for="sbutton-digits">
+                <b-form-spinbutton id="sbutton-decimal" min="1" max="3" v-model="digitsValue" placeholder="digits" inline></b-form-spinbutton>
+              </b-form-group>
+              <b-form-group
+                      id="sbutton-decimal-label"
+                      label="Decimal"
+                      label-for="sbutton-decimal">
+                <b-form-spinbutton id="sbutton-decimal" min="0" max="3" v-model="decimalValue" placeholder="decimal" inline></b-form-spinbutton>
+              </b-form-group>
+            </b-col>
+          </b-row>
+          <b-row><b-col>&nbsp;</b-col></b-row>
+          <b-row>
+            <b-col>
+              <p>{{ num1 }} - {{ num2 }} = {{answer}}</p>
+              <form @submit.prevent>
+                <b-button variant="primary" @click="refresh()">Refresh</b-button> &nbsp;
+                <b-button variant="primary" @click="getAnswer()">Answer</b-button> &nbsp;
+              </form>
+            </b-col>
+          </b-row>
+        </b-container>
     </div>
   </section>
 </template>
@@ -16,11 +37,13 @@
 <script>
 
 export default {
-  created() {
+  mounted() {
     this.refresh();
   },
   data() {
     return {
+      digitsValue: 2,
+      decimalValue: 2,
       num1: "",
       num2: "",
       answer: ""
@@ -28,23 +51,21 @@ export default {
   },
   methods: {
     genRandomNum() {
-      return Number(Math.random() * 100).toFixed(2);
+      return Number(Math.random() * Math.pow(10, this.digitsValue)).toFixed(this.decimalValue);
     },
     refresh() {
-      let temp1 = this.genRandomNum();
-      let temp2 = this.genRandomNum();
+      this.num1 = this.genRandomNum();
+      this.num2 = this.genRandomNum();
 
-      if (Number(temp2) > Number(temp1)) {
-        this.num1 = temp2;
-        this.num2 = temp1;
-      } else {
-        this.num1 = temp1;
-        this.num2 = temp2;
+      if (Number(this.num2) > Number(this.num1)) {
+        let temp = this.num1;
+        this.num1 = this.num2;
+        this.num2 = temp;
       }
       this.answer = "";
     },
     getAnswer() {
-      this.answer = Number(this.num1 - this.num2).toFixed(2);
+      this.answer = Number(this.num1 - this.num2).toFixed(this.decimalValue);
     }
   }
 }
