@@ -6,8 +6,8 @@
       <p>{{ num1 }} - {{ num2 }} = {{answer}}</p>
 
       <form @submit.prevent>
-        <button @click="refresh()" class="button">Refresh</button> &nbsp;
-        <button @click="getAnswer()" class="button">Answer</button>
+        <b-button variant="primary" @click="refresh()">Refresh</b-button> &nbsp;
+        <b-button variant="primary" @click="getAnswer()">Answer</b-button> &nbsp;
       </form>
     </div>
   </section>
