@@ -1,14 +1,20 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Dashboard from '../views/Dashboard.vue'
+import Calculator from '../views/Calculator.vue'
+import Card from '../views/Card.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Dashboard',
-    component: Dashboard,
+    name: 'Calculator',
+    component: Calculator,
+  },
+  {
+    path: '/cards',
+    name: 'Card',
+    component: Card,
   }
 ]
 

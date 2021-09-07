@@ -9,14 +9,11 @@
   form {
     margin-top: 3rem;
   }
-
-  .success {
-    color: $success;
-    margin: 0.5rem 0 -2rem;
-  }
 }
 
 .navbar-nav > li{
-  padding-left: 30px;
-  padding-right: 30px;
+  @media screen and (max-width: 990px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 }
