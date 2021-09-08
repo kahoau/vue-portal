@@ -1,11 +1,17 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Login from '../views/Login.vue'
 import Calculator from '../views/Calculator.vue'
 import Card from '../views/Card.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/login',
+    name: 'Login',
+    component: Login
+  },
   {
     path: '/',
     name: 'Calculator',

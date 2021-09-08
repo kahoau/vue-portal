@@ -9,15 +9,15 @@
         <b-nav-item href="#"><b-link to="/cards">card</b-link></b-nav-item>
       </b-navbar-nav>
 
-      <!--
       <b-navbar-nav class="ml-auto">
         <b-nav-item-dropdown text="Lang" right>
-          <b-dropdown-item href="#">EN</b-dropdown-item>
-          <b-dropdown-item href="#">ES</b-dropdown-item>
-          <b-dropdown-item href="#">RU</b-dropdown-item>
-          <b-dropdown-item href="#">FA</b-dropdown-item>
+          <b-dropdown-item href="#" v-for="(lang, i) in langs"
+                           :key="`lang${i}`"
+                           :value="lang"
+                           @click="$i18n.locale = lang">
+            {{ lang }}</b-dropdown-item>
         </b-nav-item-dropdown>
-
+        <!--
         <b-nav-item-dropdown right>
           <template #button-content>
             <em>User</em>
@@ -25,14 +25,18 @@
           <b-dropdown-item href="#">Profile</b-dropdown-item>
           <b-dropdown-item href="#">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
+        -->
       </b-navbar-nav>
-      -->
+
     </b-collapse>
   </b-navbar>
 </template>
 
 <script>
 export default {
+  data () {
+    return { langs: ['en', 'tc'] }
+  },
   methods: {
   }
 }

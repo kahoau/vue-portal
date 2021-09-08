@@ -1,7 +1,7 @@
 <template>
   <section id="calculator">
     <div class="col1">
-      <h2>Calculator</h2>
+      <h2>  <p>{{ $t('calculator.title') }}</p></h2>
         <b-container>
           <b-row>
             <b-col>
@@ -20,7 +20,7 @@
           </b-row>
           <b-row>
             <b-col>
-              <b-jumbotron lead="Formula" text-variant="dark">
+              <b-jumbotron :lead="$t('calculator.formula')" text-variant="dark">
                 <h6>{{ num1 }} {{calculatorSign}} {{ num2 }} = {{answer}}</h6>
               </b-jumbotron>
               <form @submit.prevent>
