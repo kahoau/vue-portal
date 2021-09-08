@@ -30,9 +30,9 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: 'hash',
   base: process.env.BASE_URL,
-  routes
+  routes,
 })
 
 // navigation guard to check for logged in users
