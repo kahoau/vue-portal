@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="#">&nbsp;&nbsp;Ka Portal</b-navbar-brand>
+    <b-navbar-brand href="/">&nbsp;&nbsp;Ka Portal</b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
@@ -27,7 +27,9 @@
         </b-nav-item-dropdown>
       </b-navbar-nav>
       <b-navbar-nav class="ms-auto" v-else>
-        <b-nav-item href="#"><b-link to="/login">login</b-link></b-nav-item>
+        <b-nav-item href="#">
+          <b-link to="/login"><img src="@/assets/images/login_icon_152813.png" fluid alt="Responsive image" /></b-link>
+        </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
