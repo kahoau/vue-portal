@@ -9,7 +9,7 @@
         <b-nav-item href="#" v-if="getUserProfile"><b-link to="/cards">card</b-link></b-nav-item>
       </b-navbar-nav>
 
-      <b-navbar-nav class="ml-auto order-0">
+      <b-navbar-nav class="mr-auto">
         <b-nav-item-dropdown text="Lang">
           <b-dropdown-item href="#" v-for="(lang, i) in langs"
                            :key="`lang${i}`"
@@ -18,15 +18,16 @@
             {{ lang }}</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
-      <b-navbar-nav class="ml-auto order-0">
-        <b-nav-item-dropdown right v-if="getUserProfile">
+      <b-navbar-nav v-if="getUserProfile">
+        <b-nav-item-dropdown>
           <template #button-content>
             <em>User</em>
           </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
           <b-dropdown-item href="#" @click="doLogout">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
-        <b-nav-item href="#" right v-else><b-link to="/login">login</b-link></b-nav-item>
+      </b-navbar-nav>
+      <b-navbar-nav class="ms-auto" v-else>
+        <b-nav-item href="#"><b-link to="/login">login</b-link></b-nav-item>
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
