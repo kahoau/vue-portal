@@ -28,7 +28,9 @@
       </b-navbar-nav>
       <b-navbar-nav class="ms-auto" v-else>
         <b-nav-item href="#">
-          <b-link to="/login"><img src="@/assets/images/login_icon_152813.png" fluid alt="Responsive image" /></b-link>
+          <b-link to="/login">
+            <img src="@/assets/images/login_icon_152813.png" fluid alt="Responsive image">
+          </b-link>
         </b-nav-item>
       </b-navbar-nav>
     </b-collapse>
