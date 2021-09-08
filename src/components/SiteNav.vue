@@ -6,38 +6,49 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#"><b-link to="/calculator">calculator</b-link></b-nav-item>
-        <b-nav-item href="#"><b-link to="/cards">card</b-link></b-nav-item>
+        <b-nav-item href="#" v-if="getUserProfile"><b-link to="/cards">card</b-link></b-nav-item>
       </b-navbar-nav>
 
-      <b-navbar-nav class="ml-auto">
-        <b-nav-item-dropdown text="Lang" right>
+      <b-navbar-nav class="ml-auto order-0">
+        <b-nav-item-dropdown text="Lang">
           <b-dropdown-item href="#" v-for="(lang, i) in langs"
                            :key="`lang${i}`"
                            :value="lang"
                            @click="$i18n.locale = lang">
             {{ lang }}</b-dropdown-item>
         </b-nav-item-dropdown>
-        <!--
-        <b-nav-item-dropdown right>
+      </b-navbar-nav>
+      <b-navbar-nav class="ml-auto order-0">
+        <b-nav-item-dropdown right v-if="getUserProfile">
           <template #button-content>
             <em>User</em>
           </template>
           <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
+          <b-dropdown-item href="#" @click="doLogout">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown>
-        -->
+        <b-nav-item href="#" right v-else><b-link to="/login">login</b-link></b-nav-item>
       </b-navbar-nav>
-
     </b-collapse>
   </b-navbar>
 </template>
 
 <script>
+import {mapGetters} from "vuex";
+
 export default {
   data () {
     return { langs: ['en', 'tc'] }
   },
+  computed: {
+    ...mapGetters(["getUserProfile"])
+  },
   methods: {
+    doLogout() {
+        this.$store.dispatch('logout', {
+          email: this.emailLogin,
+          password: this.passwordLogin
+        })
+    }
   }
 }
 </script>
