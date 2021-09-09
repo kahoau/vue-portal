@@ -7,6 +7,9 @@ export default {
         userProfile: null
     },
     mutations: {
+        [types.SET_LOCALE] (state, data) {
+            Storage.saveToSession('locale', data.locale)
+        },
         [types.SET_USER_PROFILE] (state, data) {
             state.userProfile = data
 
@@ -20,6 +23,9 @@ export default {
         }
     },
     actions: {
+        setLocale({ dispatch, commit }, data) {
+            commit(types.SET_LOCALE, {'locale' : data.locale})
+        },
         async login({ dispatch, commit }, form) {
             if (form.username === "" || form.password === "") {
                 return false;

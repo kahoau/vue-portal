@@ -5,17 +5,17 @@
         <b-container>
           <b-row>
             <b-col>
-              Sign <b-form-select v-model="selectedCalculatorSign" :options="options"></b-form-select>
+              {{ $t('calculator.sign') }} <b-form-select v-model="selectedCalculatorSign" :options="options"></b-form-select>
             </b-col>
           </b-row>
           <b-row>
             <b-col>
-                Digits <b-form-spinbutton id="sbutton-decimal" min="1" max="3" v-model="digitsValue" placeholder="digits" inline></b-form-spinbutton>
+              {{ $t('calculator.digit') }} <b-form-spinbutton id="sbutton-decimal" min="1" max="3" v-model="digitsValue" placeholder="digits" inline></b-form-spinbutton>
             </b-col>
           </b-row>
           <b-row>
             <b-col>
-                Decimal <b-form-spinbutton id="sbutton-decimal" min="0" max="3" v-model="decimalValue" placeholder="decimal" inline></b-form-spinbutton>
+              {{ $t('calculator.decimal') }} <b-form-spinbutton id="sbutton-decimal" min="0" max="3" v-model="decimalValue" placeholder="decimal" inline></b-form-spinbutton>
             </b-col>
           </b-row>
           <b-row>

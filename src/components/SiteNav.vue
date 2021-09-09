@@ -14,7 +14,7 @@
           <b-dropdown-item href="#" v-for="(lang, i) in langs"
                            :key="`lang${i}`"
                            :value="lang"
-                           @click="$i18n.locale = lang">
+                           @click="setLocale(lang)">
             {{ lang }}</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
@@ -38,6 +38,7 @@
 </template>
 
 <script>
+import {app} from '../main'
 import {mapGetters} from "vuex";
 import dispatchConstants from '../common/dispatchConstants'
 
@@ -49,6 +50,13 @@ export default {
     ...mapGetters(["getUserProfile"])
   },
   methods: {
+    setLocale(lang) {
+      app.$i18n.locale = lang;
+
+      this.$store.dispatch(dispatchConstants.setLocale, {
+        locale: lang
+      })
+    },
     doLogout() {
         this.$store.dispatch(dispatchConstants.userLogout, {
           username: this.usernameLogin,

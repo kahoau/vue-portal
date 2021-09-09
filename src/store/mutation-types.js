@@ -1,4 +1,5 @@
 export const INITIALISE_STORE = 'INITIALISE_STORE'
 
+export const SET_LOCALE = 'SET_LOCALE'
 export const SET_USER_PROFILE = 'SET_USER_PROFILE'
 export const SET_CARDS = 'SET_CARDS'

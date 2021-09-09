@@ -1,6 +1,11 @@
 {
   "calculator": {
     "title" : "計算機",
-    "formula" : "方程式"
+    "formula" : "方程式",
+    "sign": "符號",
+    "digit": "位數",
+    "decimal": "小數位",
+    "refresh": "刷新",
+    "answer": "答案"
   }
 }

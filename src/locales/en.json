@@ -1,6 +1,11 @@
 {
   "calculator": {
     "title" : "Calculator",
-    "formula" : "Formula"
+    "formula" : "Formula",
+    "sign": "Sign",
+    "digit": "Digit",
+    "decimal": "Decimal",
+    "refresh": "Refresh",
+    "answer": "Answer"
   }
 }

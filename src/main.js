@@ -14,7 +14,7 @@ Vue.use(IconsPlugin)
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-let app = new Vue({
+export let app = new Vue({
     i18n,
     router,
     store,
