@@ -1,24 +1,31 @@
 <template>
-  <b-container fluid>
-    <b-row cols="1" cols-sm="1" cols-md="2" cols-lg="4">
-      <b-col v-for="card in getCards" :key="card.id">
-        <b-card
-                :title="card.title"
-                :img-src="card.imgSrc"
-                img-alt="Image"
-                img-top
-                tag="article"
-                style="max-width: 20rem;"
-                class="mb-2"
-        >
-          <b-card-text>
-            {{ card.desc }}
-          </b-card-text>
-        </b-card>
-      </b-col>
-    </b-row>
-
-  </b-container>
+    <b-container fluid>
+        <b-row cols="1" cols-sm="2" cols-md="3" cols-lg="4">
+            <b-col
+                    v-for="card in getCards"
+                    :key="card.id"
+                    col
+                    no-gutters
+                    class="mb-2"
+            >
+                <b-card
+                        :title="card.title"
+                        :img-src="card.imgSrc"
+                        border-variant="secondary"
+                        img-width="100%"
+                        align="center"
+                        class="h-100"
+                >
+                    <b-card-text>
+                        {{ card.title }}
+                    </b-card-text>
+                    <template v-slot:footer v-if="card.title">
+                        {{ card.title }}
+                    </template>
+                </b-card>
+            </b-col>
+        </b-row>
+    </b-container>
 </template>
 
 <script>
@@ -46,4 +53,15 @@ export default {
 img {
   cursor: pointer;
 }
+
+/*
+.card-columns .card {
+  max-width: 25%;
+}
+
+.card-columns .card {
+  max-width: calc(25% - 30px);
+  display: inline-block;
+}
+*/
 </style>
