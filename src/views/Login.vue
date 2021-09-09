@@ -11,7 +11,7 @@
                     <div v-if="!registerActive" class="card login" v-bind:class="{ error: emptyFields }">
                         <h1>Sign In</h1>
                         <form class="form-group" @submit.prevent>
-                            <input v-model="emailLogin" type="text" class="form-control" placeholder="Email" required>
+                            <input v-model="usernameLogin" type="text" class="form-control" placeholder="Username" required>
                             <input v-model="passwordLogin" type="password" class="form-control" placeholder="Password" required>
                             <input type="submit" class="btn btn-primary" @click="doLogin">
                             <!--
@@ -25,7 +25,7 @@
                     <div v-else class="card register" v-bind:class="{ error: emptyFields }">
                         <h1>Sign Up</h1>
                         <form class="form-group">
-                            <input v-model="emailReg" type="email" class="form-control" placeholder="Email" required>
+                            <input v-model="usernameReg" type="text" class="form-control" placeholder="Username" required>
                             <input v-model="passwordReg" type="password" class="form-control" placeholder="Password" required>
                             <input v-model="confirmReg" type="password" class="form-control" placeholder="Confirm Password" required>
                             <input type="submit" class="btn btn-primary" @click="doRegister">
@@ -40,13 +40,15 @@
 </template>
 
 <script>
+    import dispatchConstants from '../common/dispatchConstants'
+
     export default {
         data() {
             return {
                 registerActive: false,
-                emailLogin: "",
+                usernameLogin: "",
                 passwordLogin: "",
-                emailReg: "",
+                usernameReg: "",
                 passwordReg: "",
                 confirmReg: "",
                 emptyFields: false
@@ -54,17 +56,17 @@
         },
         methods: {
             doLogin() {
-                if (this.emailLogin === "" || this.passwordLogin === "") {
+                if (this.usernameLogin === "" || this.passwordLogin === "") {
                     this.emptyFields = true;
                 } else {
-                    this.$store.dispatch('login', {
-                        email: this.emailLogin,
+                    this.$store.dispatch(dispatchConstants.userLogin, {
+                        username: this.usernameLogin,
                         password: this.passwordLogin
                     })
                 }
             },
             doRegister() {
-                if (this.emailReg === "" || this.passwordReg === "" || this.confirmReg === "") {
+                if (this.usernameReg === "" || this.passwordReg === "" || this.confirmReg === "") {
                     this.emptyFields = true;
                 } else {
                     alert("You are now registered");

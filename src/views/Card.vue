@@ -23,10 +23,11 @@
 
 <script>
 import { mapGetters } from "vuex";
+import dispatchConstants from '../common/dispatchConstants'
 
 export default {
   mounted() {
-    this.$store.dispatch("fetchCards");
+    this.$store.dispatch(dispatchConstants.fetchCards);
   },
   data() {
     return {

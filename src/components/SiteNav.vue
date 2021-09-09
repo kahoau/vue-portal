@@ -39,6 +39,7 @@
 
 <script>
 import {mapGetters} from "vuex";
+import dispatchConstants from '../common/dispatchConstants'
 
 export default {
   data () {
@@ -49,8 +50,8 @@ export default {
   },
   methods: {
     doLogout() {
-        this.$store.dispatch('logout', {
-          email: this.emailLogin,
+        this.$store.dispatch(dispatchConstants.userLogout, {
+          username: this.usernameLogin,
           password: this.passwordLogin
         })
     }
