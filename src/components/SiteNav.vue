@@ -41,10 +41,11 @@
 import {app} from '../main'
 import {mapGetters} from "vuex";
 import dispatchConstants from '../common/dispatchConstants'
+import constants from '../common/constants'
 
 export default {
   data () {
-    return { langs: ['en', 'tc'] }
+    return { langs: constants.locale.availableLocale }
   },
   computed: {
     ...mapGetters(["getUserProfile"])

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import Storage from '../storage'
+import constants from '../common/constants'
 
 Vue.use(VueI18n)
 
@@ -18,7 +19,7 @@ function loadLocaleMessages() {
 }
 
 export default new VueI18n({
-    locale: process.env.VUE_APP_I18N_LOCALE || Storage.getFromSession('locale') || 'en',
-    fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || Storage.getFromSession('locale') || 'en',
+    locale: process.env.VUE_APP_I18N_LOCALE || Storage.getFromLocal('locale') || constants.locale.default,
+    fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || Storage.getFromLocal('locale') || constants.locale.default,
     messages: loadLocaleMessages()
 })
