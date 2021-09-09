@@ -49,7 +49,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 img {
   cursor: pointer;
 }
@@ -64,4 +63,8 @@ img {
   display: inline-block;
 }
 */
+/*
+    https://stackoverflow.com/questions/52584241/how-can-i-set-column-in-row-on-the-card-group-bootstrap-vue
+    https://github.com/bootstrap-vue/bootstrap-vue/issues/5571
+ */
 </style>
