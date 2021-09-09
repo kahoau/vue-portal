@@ -24,8 +24,8 @@
                 <h6>{{ num1 }} {{calculatorSign}} {{ num2 }} = {{answer}}</h6>
               </b-jumbotron>
               <form @submit.prevent>
-                <b-button variant="primary" @click="refresh()">Refresh</b-button> &nbsp;
-                <b-button variant="primary" @click="calcAnswer()">Answer</b-button> &nbsp;
+                <b-button variant="primary" @click="refresh()">{{ $t('calculator.refresh') }}</b-button> &nbsp;
+                <b-button variant="primary" @click="calcAnswer()">{{ $t('calculator.answer') }}</b-button> &nbsp;
               </form>
             </b-col>
           </b-row>
