@@ -38,7 +38,6 @@
 </template>
 
 <script>
-import {app} from '../main'
 import {mapGetters} from "vuex";
 import dispatchConstants from '../common/dispatchConstants'
 import constants from '../common/constants'
@@ -52,8 +51,6 @@ export default {
   },
   methods: {
     setLocale(lang) {
-      app.$i18n.locale = lang;
-
       this.$store.dispatch(dispatchConstants.setLocale, {
         locale: lang
       })
