@@ -45,7 +45,7 @@ export default {
         }
     },
     getters: {
-        getUserProfile(state) {
+        isAuthenticated(state) {
             return state.userProfile
         }
     }

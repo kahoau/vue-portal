@@ -6,7 +6,7 @@
     <b-collapse id="nav-collapse" is-nav>
       <b-navbar-nav>
         <b-nav-item href="#"><b-link to="/calculator">calculator</b-link></b-nav-item>
-        <b-nav-item href="#" v-if="getUserProfile"><b-link to="/cards">card</b-link></b-nav-item>
+        <b-nav-item href="#" v-if="isAuthenticated"><b-link to="/cards">cards</b-link></b-nav-item>
       </b-navbar-nav>
 
       <b-navbar-nav class="mr-auto">
@@ -18,7 +18,7 @@
             {{ lang }}</b-dropdown-item>
         </b-nav-item-dropdown>
       </b-navbar-nav>
-      <b-navbar-nav v-if="getUserProfile">
+      <b-navbar-nav v-if="isAuthenticated">
         <b-nav-item-dropdown>
           <template #button-content>
             <em>User</em>
@@ -47,7 +47,7 @@ export default {
     return { langs: constants.locale.availableLocale }
   },
   computed: {
-    ...mapGetters(["getUserProfile"])
+    ...mapGetters(["isAuthenticated"])
   },
   methods: {
     setLocale(lang) {

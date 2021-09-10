@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import Calculator from '../views/Calculator.vue'
-import Card from '../views/Card.vue'
+import CardView from '../views/CardView.vue'
 
 Vue.use(VueRouter)
 
@@ -23,8 +23,8 @@ const routes = [
   },
   {
     path: '/cards',
-    name: 'Card',
-    component: Card
+    name: 'CardView',
+    component: CardView
   }
 ]
 
