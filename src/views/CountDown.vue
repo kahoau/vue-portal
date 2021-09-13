@@ -63,9 +63,9 @@ export default {
       let numDays = 0;
       while(dateTo.diff(d1.add(1, 'days')) > 0) {
         if ([0, 6].includes(d1.day())) {
-          // Don't count the days
+          // Don't count the sat/sun
         } else if (this.isNonWeekendPublicHolidays(d1.format("YYYY-MM-DD"))) {
-          // Don't count the days
+          // Don't count public holidays fall into weekdays
         } else {
           numDays++;
         }
