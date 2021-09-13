@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
-import Calculator from '../views/Calculator.vue'
-import CountDown from '../views/CountDown.vue'
+import CalculatorView from '../views/CalculatorView.vue'
+import CountDownView from '../views/CountDownView.vue'
 import CardView from '../views/CardView.vue'
 
 Vue.use(VueRouter)
@@ -15,17 +15,17 @@ const routes = [
   },
   {
     path: '/',
-    component: Calculator
+    component: CalculatorView
   },
   {
     path: '/calculator',
-    name: 'Calculator',
-    component: Calculator
+    name: 'CalculatorView',
+    component: CalculatorView
   },
   {
     path: '/countdown',
     name: 'CountDown',
-    component: CountDown
+    component: CountDownView
   },
   {
     path: '/cards',
