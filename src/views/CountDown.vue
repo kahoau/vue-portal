@@ -1,31 +1,51 @@
 <template>
   <section id="countdown">
     <div class="col1">
-      <h2><p>{{ $t('countdown.title') }} {{ $t('countdown.to') }} {{getDec2021BonusDay()}}</p></h2>
+      <h5><p>{{ $t('countdown.title') }} {{ $t('countdown.to') }} {{getDec2021BonusDay()}}</p></h5>
       <b-container>
         <b-row>
           <b-col>
-            {{ $t('countdown.calendarDays') }}: {{getCalendarDays(getDec2021BonusDay())}}
+            <div class="clockdiv">
+              <div>
+                <span class="days day">{{getCalendarDays(getDec2021BonusDay())}}</span>
+              </div>
+            </div>
+            {{ $t('countdown.calendarDays') }}
           </b-col>
         </b-row>
         <b-row>
           <b-col>
-            {{ $t('countdown.workingDays') }}: {{getBusinessDays(getDec2021BonusDay())}}
+            <div class="clockdiv">
+              <div>
+                <span class="days day">{{getWorkingDays(getDec2021BonusDay())}}</span>
+              </div>
+            </div>
+            {{ $t('countdown.workingDays') }}
           </b-col>
         </b-row>
       </b-container>
     </div>
     <div class="col1">
-      <h2><p>{{ $t('countdown.title') }} {{ $t('countdown.to') }} {{getApr2022BonusDay()}}</p></h2>
+      <h5><p>{{ $t('countdown.title') }} {{ $t('countdown.to') }} {{getApr2022BonusDay()}}</p></h5>
       <b-container>
         <b-row>
           <b-col>
-            {{ $t('countdown.calendarDays') }}: {{getCalendarDays(getApr2022BonusDay())}}
+            <div class="clockdiv">
+              <div>
+                <span class="days day">{{getCalendarDays(getApr2022BonusDay())}}</span>
+              </div>
+            </div>
+            {{ $t('countdown.calendarDays') }}
           </b-col>
         </b-row>
         <b-row>
           <b-col>
-            {{ $t('countdown.workingDays') }}: {{getBusinessDays(getApr2022BonusDay())}}
+            <div class="clockdiv">
+              <div>
+                <span class="days day">{{getWorkingDays(getApr2022BonusDay())}}</span>
+              </div>
+            </div>
+            {{ $t('countdown.workingDays') }}
           </b-col>
         </b-row>
       </b-container>
@@ -55,7 +75,7 @@ export default {
 
       return dateTo.diff(dateFrom, 'days')
     },
-    getBusinessDays(theBonusDate) {
+    getWorkingDays(theBonusDate) {
       const dateFrom = this.getDate().startOf("day")
       const dateTo = this.getDate(theBonusDate).add(1, 'days').startOf("day")
 
@@ -102,5 +122,30 @@ export default {
 <style lang="scss" scoped>
   .col {
     margin-bottom: 0.5rem;
+  }
+
+  .clockdiv{
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+  }
+  .clockdiv > div{
+    padding: 10px;
+    border-radius: 3px;
+    background: #00BF96;
+    display: inline-block;
+  }
+  .clockdiv div > span{
+    padding: 15px;
+    border-radius: 3px;
+    background: #00816A;
+    display: inline-block;
+  }
+  smalltext{
+    padding-top: 5px;
+    font-size: 16px;
   }
 </style>
