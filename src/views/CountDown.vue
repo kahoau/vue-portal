@@ -1,31 +1,31 @@
 <template>
   <section id="countdown">
     <div class="col1">
-      <h2><p>{{ $t('countdown.title') }} to {{getDec2021BonusDay()}}</p></h2>
+      <h2><p>{{ $t('countdown.title') }} {{ $t('countdown.to') }} {{getDec2021BonusDay()}}</p></h2>
       <b-container>
         <b-row>
           <b-col>
-            Calendar Days: {{getCalendarDays(getDec2021BonusDay())}}
+            {{ $t('countdown.calendarDays') }}: {{getCalendarDays(getDec2021BonusDay())}}
           </b-col>
         </b-row>
         <b-row>
           <b-col>
-            Business Days: {{getBusinessDays(getDec2021BonusDay())}}
+            {{ $t('countdown.workingDays') }}: {{getBusinessDays(getDec2021BonusDay())}}
           </b-col>
         </b-row>
       </b-container>
     </div>
     <div class="col1">
-      <h2><p>{{ $t('countdown.title') }} to {{getApr2022BonusDay()}}</p></h2>
+      <h2><p>{{ $t('countdown.title') }} {{ $t('countdown.to') }} {{getApr2022BonusDay()}}</p></h2>
       <b-container>
         <b-row>
           <b-col>
-            Calendar Days: {{getCalendarDays(getApr2022BonusDay())}}
+            {{ $t('countdown.calendarDays') }}: {{getCalendarDays(getApr2022BonusDay())}}
           </b-col>
         </b-row>
         <b-row>
           <b-col>
-            Business Days: {{getBusinessDays(getApr2022BonusDay())}}
+            {{ $t('countdown.workingDays') }}: {{getBusinessDays(getApr2022BonusDay())}}
           </b-col>
         </b-row>
       </b-container>

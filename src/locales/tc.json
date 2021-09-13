@@ -9,6 +9,9 @@
     "answer": "答案"
   },
   "countdown": {
-    "title": "倒數"
+    "title": "倒數",
+    "to": "到",
+    "calendarDays": "日曆日",
+    "workingDays": "工作日"
   }
 }

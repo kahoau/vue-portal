@@ -9,6 +9,9 @@
     "answer": "Answer"
   },
   "countdown": {
-    "title": "Count Down"
+    "title": "Count Down",
+    "to": "to",
+    "calendarDays": "Calendar Days",
+    "workingDays": "Working Days"
   }
 }
