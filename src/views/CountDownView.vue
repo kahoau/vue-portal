@@ -11,10 +11,11 @@
 </template>
 
 <script>
-import moment from 'moment-timezone'
 import CountDown from "../components/CountDown";
+import mixins from '../common/mixins'
 
 export default {
+  mixins : [ mixins ],
   components: {CountDown},
   mounted() {
   },
@@ -65,10 +66,6 @@ export default {
         this.getDate("2022-07-01"), this.getDate("2022-09-12"), this.getDate("2022-10-04"),
         this.getDate("2022-12-26"), this.getDate("2022-12-27")
       ];
-    },
-    getDate(dateStr) {
-      return (dateStr !== undefined) ? moment.tz(dateStr, "Asia/Taipei").startOf("day") :
-                                       moment.tz("Asia/Taipei").startOf("day");
     }
   }
   // https://hong-kong.workingdays.org/

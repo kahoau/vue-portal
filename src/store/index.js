@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import settings from './modules/settings'
 import user from './modules/user'
+import quote from './modules/quote'
 import card from './modules/card'
 
 
@@ -13,6 +14,7 @@ export default new Vuex.Store({
   modules: {
     settings,
     user,
+    quote,
     card
   }
 })

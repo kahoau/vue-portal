@@ -11,7 +11,7 @@ export default {
     },
     actions: {
         async fetchCards({ commit }) {
-            const cards = await fetch('cards.json');
+            const cards = await fetch('data/cards/cards.json');
             commit(types.SET_CARDS, await cards.json())
         }
     },

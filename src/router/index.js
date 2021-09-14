@@ -3,7 +3,9 @@ import VueRouter from 'vue-router'
 import Login from '../views/Login.vue'
 import CalculatorView from '../views/CalculatorView.vue'
 import CountDownView from '../views/CountDownView.vue'
+import QuoteView from '../views/QuoteView.vue'
 import CardView from '../views/CardView.vue'
+
 
 Vue.use(VueRouter)
 
@@ -24,8 +26,13 @@ const routes = [
   },
   {
     path: '/countdown',
-    name: 'CountDown',
+    name: 'CountDownView',
     component: CountDownView
+  },
+  {
+    path: '/quotes',
+    name: 'QuoteView',
+    component: QuoteView
   },
   {
     path: '/cards',
@@ -37,7 +44,7 @@ const routes = [
 const router = new VueRouter({
   mode: 'hash',
   base: process.env.BASE_URL,
-  routes,
+  routes
 })
 
 // navigation guard to check for logged in users

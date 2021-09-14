@@ -7,6 +7,7 @@
       <b-navbar-nav>
         <b-nav-item href="#"><b-link to="/calculator">calculator</b-link></b-nav-item>
         <b-nav-item href="#"><b-link to="/countdown">countdown</b-link></b-nav-item>
+        <b-nav-item href="#"><b-link to="/quotes">quotes</b-link></b-nav-item>
         <b-nav-item href="#" v-if="isAuthenticated"><b-link to="/cards">cards</b-link></b-nav-item>
       </b-navbar-nav>
 
