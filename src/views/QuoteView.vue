@@ -3,7 +3,7 @@
         <div class="col1">
             <b-jumbotron bg-variant="secondary" text-variant="white" border-variant="dark"
                          style="padding: 1rem"
-                         v-for="(quote, i) in quoteFilter" :key="i">
+                         v-for="(quote, i) in filteredQuotes" :key="i">
                 <template #lead>
                     {{ quote.tc }}
                 </template>
@@ -29,7 +29,7 @@ export default {
   },
     computed: {
         ...mapGetters(["getQuotes"]),
-        quoteFilter: function() {
+        filteredQuotes: function() {
             const quoteIdx = this.getDate().date() - 1
             return this.getQuotes.filter( (quote,i) => (i == quoteIdx))
         }
