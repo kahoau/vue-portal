@@ -1,17 +1,10 @@
 <template>
   <section id="countdown">
-    <div class="col1">
-      <h5><p>{{ $t('countdown.title') }} {{ $t('countdown.to') }} {{getDec2021BonusDay()}}</p></h5>
+    <div class="col1" v-for="(bonusDate, i) in getBonusDates()" :key="i">
+      <h5><p>{{ $t('countdown.title') }} {{ $t('countdown.to') }} {{bonusDate}}</p></h5>
       <count-down
-              :calendar-days="getCalendarDays(getDec2021BonusDay())"
-              :working-days="getWorkingDays(getDec2021BonusDay())"
-      ></count-down>
-    </div>
-    <div class="col1">
-      <h5><p>{{ $t('countdown.title') }} {{ $t('countdown.to') }} {{getApr2022BonusDay()}}</p></h5>
-      <count-down
-              :calendar-days="getCalendarDays(getApr2022BonusDay())"
-              :working-days="getWorkingDays(getApr2022BonusDay())"
+              :calendar-days="getCalendarDays(bonusDate)"
+              :working-days="getWorkingDays(bonusDate)"
       ></count-down>
     </div>
   </section>
@@ -29,11 +22,8 @@ export default {
     return {}
   },
   methods: {
-    getDec2021BonusDay() {
-      return "2021/12/20";
-    },
-    getApr2022BonusDay() {
-      return "2022/04/20";
+    getBonusDates() {
+      return ["2021/12/20", "2022/04/20"];
     },
     getCalendarDays(theBonusDate) {
       const dateFrom = this.getDate().startOf("day")
