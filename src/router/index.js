@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '../views/Login.vue'
+import LoginView from '../views/LoginView.vue'
 import CalculatorView from '../views/CalculatorView.vue'
 import CountDownView from '../views/CountDownView.vue'
 import QuoteView from '../views/QuoteView.vue'
@@ -12,8 +12,8 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/login',
-    name: 'Login',
-    component: Login
+    name: 'LoginView',
+    component: LoginView
   },
   {
     path: '/',

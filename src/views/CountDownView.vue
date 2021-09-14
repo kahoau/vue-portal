@@ -34,15 +34,15 @@ export default {
     },
     getWorkingDays(theBonusDate) {
       const dateFrom = this.getDate().startOf("day")
-      const dateTo = this.getDate(theBonusDate).add(1, 'days').startOf("day")
+      const dateTo = this.getDate(theBonusDate).startOf("day").add(1, 'days')
 
       let d1 = dateFrom.clone();
       let numDays = 0;
       while(dateTo.diff(d1.add(1, 'days')) > 0) {
         if ([0, 6].includes(d1.day())) {
-          // Don't count the sat/sun
+          // don't count sat/sun
         } else if (this.isNonWeekendPublicHolidays(d1)) {
-          // Don't count public holidays fall into weekdays
+          // don't count public holidays fall into weekdays
         } else {
           numDays++;
         }
