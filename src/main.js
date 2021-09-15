@@ -5,18 +5,31 @@ import router from './router'
 import store from './store'
 import './assets/scss/app.scss'
 import {BootstrapVue,IconsPlugin} from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import constants from './common/constants'
+import * as types from './store/mutation-types'
 
-Vue.config.productionTip = false
 
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
+Vue.config.productionTip = false
 
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
+const setLocaleFromURL = (paramLocale, i18n, store) => {
+    if (!paramLocale || !constants.locale.availableLocale.includes(paramLocale)) {
+        return
+    }
+
+    i18n.locale = paramLocale
+    store.commit(types.INITIALISE_STORE, paramLocale)
+}
 
 export let app = new Vue({
-    i18n,
-    router,
     store,
-    render: h => h(App)
+    i18n,
+    render: h => h(App),
+    router,
+    beforeCreate() {
+        setLocaleFromURL(this.$route.query.locale, i18n, this.$store)
+    }
 }).$mount('#app')
