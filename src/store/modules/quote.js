@@ -1,5 +1,9 @@
 import * as types from '../mutation-types'
 
+import {
+    retrieveQuotes
+} from '@/api/application'
+
 export default {
     state: {
         quotes: []
@@ -11,8 +15,8 @@ export default {
     },
     actions: {
         async fetchQuotes({ commit }, monthIdx) {
-            const quotes = await fetch('data/quotes/quotes-month-' + monthIdx + '.json');
-            commit(types.SET_QUOTES, await quotes.json())
+            const quotes = await retrieveQuotes('quotes-month-' + monthIdx + '.json');
+            commit(types.SET_QUOTES, await quotes.data)
         }
     },
     getters: {
