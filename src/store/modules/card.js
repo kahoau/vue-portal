@@ -1,4 +1,5 @@
 import * as types from '../mutation-types'
+import {retrieveCards} from "../../api/application";
 
 export default {
     state: {
@@ -11,8 +12,8 @@ export default {
     },
     actions: {
         async fetchCards({ commit }) {
-            const cards = await fetch('data/cards/cards.json');
-            commit(types.SET_CARDS, await cards.json())
+            const cards = await retrieveCards('cards.json');
+            commit(types.SET_CARDS, await cards.data)
         }
     },
     getters: {
