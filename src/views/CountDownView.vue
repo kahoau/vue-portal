@@ -1,12 +1,14 @@
 <template>
   <section id="countdown">
-    <div class="col1" v-for="(bonusDate, i) in getBonusDates()" :key="i">
-      <h5><p>{{ $t('countdown.title') }} {{ $t('countdown.to') }} {{bonusDate}}</p></h5>
-      <count-down
-              :calendar-days="getCalendarDays(bonusDate)"
-              :working-days="getWorkingDays(bonusDate)"
-      ></count-down>
-    </div>
+      <div class="col1" v-for="(bonusDate, i) in getBonusDates()" :key="i">
+        <h5 :id="`collapse-toggle-${i}`" v-b-toggle="`collapse-${i}`" variant="primary"><p>{{ $t('countdown.title') }} {{ $t('countdown.to') }} {{bonusDate}}</p></h5>
+        <b-collapse :id="`collapse-${i}`" class="mt-2">
+          <count-down
+                  :calendar-days="getCalendarDays(bonusDate)"
+                  :working-days="getWorkingDays(bonusDate)"
+          ></count-down>
+        </b-collapse>
+      </div>
   </section>
 </template>
 
@@ -16,15 +18,19 @@ import mixins from '../common/mixins'
 
 export default {
   mixins : [ mixins ],
-  components: {CountDown},
-  mounted() {
-  },
+  components: { CountDown },
+    mounted: () => {
+        setTimeout(() => {
+            const elem = document.getElementById('collapse-toggle-0');
+            elem.click();
+        }, 100);
+    },
   data() {
     return {}
   },
   methods: {
     getBonusDates() {
-      return ["2021/12/20", "2022/04/20"];
+      return ["2021/12/20", "2022/04/20", "2022/12/20"];
     },
     getCalendarDays(theBonusDate) {
       const dateFrom = this.getDate().startOf("day")
