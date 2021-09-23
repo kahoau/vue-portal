@@ -35,8 +35,9 @@ export default {
     getCalendarDays(theBonusDate) {
       const dateFrom = this.getDate().startOf("day")
       const dateTo = this.getDate(theBonusDate).startOf("day")
+      const diffDays = dateTo.diff(dateFrom, 'days')
 
-      return dateTo.diff(dateFrom, 'days')
+      return diffDays < 0 ? 0 : diffDays;
     },
     getWorkingDays(theBonusDate) {
       const dateFrom = this.getDate().startOf("day")
