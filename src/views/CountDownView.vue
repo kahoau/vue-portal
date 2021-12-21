@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     getBonusDates() {
-      return ["2021/12/20", "2022/04/20", "2022/12/20"];
+      return ["2022/04/20", "2022/12/20"];
     },
     getCalendarDays(theBonusDate) {
       const dateFrom = this.getDate().startOf("day")
