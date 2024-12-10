@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     getBonusDates() {
-      return ["2022/04/20", "2022/12/20"];
+      return ["2025/03/31", "2025/6/30"];
     },
     getCalendarDays(theBonusDate) {
       const dateFrom = this.getDate().startOf("day")
@@ -61,17 +61,12 @@ export default {
     },
     getNonWeekendPublicHolidays() {
       return [
-        this.getDate("2021-01-01"), this.getDate("2021-02-12"), this.getDate("2021-02-15"),
-        this.getDate("2021-04-02"), this.getDate("2021-04-05"), this.getDate("2021-04-06"),
-        this.getDate("2021-05-19"), this.getDate("2021-06-14"), this.getDate("2021-07-01"),
-        this.getDate("2021-09-22"), this.getDate("2021-10-01"), this.getDate("2021-10-14"),
-        this.getDate("2021-12-27"),
-
-        this.getDate("2022-02-01"), this.getDate("2022-02-02"), this.getDate("2022-02-03"),
-        this.getDate("2022-04-05"), this.getDate("2022-04-15"), this.getDate("2022-04-18"),
-        this.getDate("2022-05-02"), this.getDate("2022-05-09"), this.getDate("2022-06-03"),
-        this.getDate("2022-07-01"), this.getDate("2022-09-12"), this.getDate("2022-10-04"),
-        this.getDate("2022-12-26"), this.getDate("2022-12-27")
+        this.getDate("2024-12-25"), this.getDate("2024-12-26"),
+        this.getDate("2025-01-01"), this.getDate("2025-01-29"), this.getDate("2025-01-30"),
+        this.getDate("2025-01-31"), this.getDate("2025-04-04"), this.getDate("2025-04-18"),
+        this.getDate("2025-04-21"), this.getDate("2025-05-01"), this.getDate("2025-05-05"),
+        this.getDate("2025-07-01"), this.getDate("2025-10-01"), this.getDate("2025-10-07"),
+        this.getDate("2025-10-29"), this.getDate("2025-12-25"), this.getDate("2025-12-26")
       ];
     }
   }
