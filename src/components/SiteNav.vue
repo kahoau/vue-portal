@@ -1,6 +1,6 @@
 <template>
   <b-navbar toggleable="lg" type="dark" variant="info">
-    <b-navbar-brand href="/">&nbsp;&nbsp;Vue Portal</b-navbar-brand>
+    <b-navbar-brand href="/">&nbsp;&nbsp;Ka Portal</b-navbar-brand>
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
     <b-collapse id="nav-collapse" is-nav>
